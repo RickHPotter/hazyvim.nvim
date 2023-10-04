@@ -14,6 +14,7 @@ local M = {
         },
         never_show = {
           ".git",
+          ".ruby-lsp",
           ".bundle",
           ".DS_Store",
           "thumbs.db",
