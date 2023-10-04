@@ -24,7 +24,7 @@ local M = {
                   "--format",
                   "files",
                 },
-                stdin = true,
+                stdin = false,
               }
             end
           end,
