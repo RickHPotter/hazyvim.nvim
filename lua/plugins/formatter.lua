@@ -1,46 +1,43 @@
 local M = {
   "mhartington/formatter.nvim",
+  config = function()
+    local ruby_version = vim.fn.system("ruby -v")
+
+    require("formatter").setup({
+      logging = true,
+      log_level = vim.log.levels.WARN,
+      filetype = {
+        ruby = {
+          function()
+            local current_buffer = vim.fn.expand("%:p")
+            if ruby_version:find("^2%.[0123]") then
+              vim.notify("Ruby too old for this shit.")
+              vim.notify("Ruby version: " .. ruby_version)
+              return {}
+            else
+              return {
+                exe = "rubocop",
+                args = {
+                  "--fix-layout",
+                  "--autocorrect-all",
+                  current_buffer,
+                  "--format",
+                  "files",
+                },
+                stdin = true,
+              }
+            end
+          end,
+        },
+        lua = {
+          require("formatter.filetypes.lua").stylua,
+        },
+        ["*"] = {
+          require("formatter.filetypes.any").remove_trailing_whitespace,
+        },
+      },
+    })
+  end,
 }
-
--- TODO: move this to autocmd if possible
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup("_formatter", { clear = true }),
-  pattern = "*",
-  command = "FormatWrite",
-})
-
-function M.config()
-  local util = require("formatter.util")
-  require("formatter").setup({
-    logging = true,
-    log_level = vim.log.levels.WARN,
-    filetype = {
-      ruby = {
-        -- require("formatter.filetypes.ruby").rubocop,
-        function()
-          return {
-            exe = "rubocop",
-            args = {
-              "--fix-layout",
-              "--autocorrect-all",
-              "--stdin",
-              util.escape_path(util.get_current_buffer_file_name()),
-              "--format",
-              "files",
-              "--stderr",
-            },
-            stdin = true,
-          }
-        end,
-      },
-      lua = {
-        require("formatter.filetypes.lua").stylua,
-      },
-      ["*"] = {
-        require("formatter.filetypes.any").remove_trailing_whitespace,
-      },
-    },
-  })
-end
 
 return M

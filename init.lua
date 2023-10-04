@@ -1,10 +1,7 @@
 require("config.lazy")
 
-vim.opt.winbar = "%=%m %f"
 vim.opt.relativenumber = true
 vim.g.dap_virtual_text = true
-
-vim.cmd("colorscheme everblush")
 
 -- codeium
 vim.g.codeium_disable_bindings = 1
