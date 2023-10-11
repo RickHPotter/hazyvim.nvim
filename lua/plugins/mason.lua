@@ -21,6 +21,8 @@ local M = {
           "ruby-lsp",
           "solargraph",
           "erb-lint",
+
+          "elixir-ls",
         })
       end
     end,
