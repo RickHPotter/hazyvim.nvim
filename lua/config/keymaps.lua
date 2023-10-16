@@ -64,9 +64,9 @@ end, { expr = true, desc = "Clear Codeium completions" })
 -- toggle
 local toggle = require("config.toggle_case")
 
-mapper({ "n", "v" }, "<leader>sc", toggle.snake_case, "Toggle Snake Case")
-mapper({ "n", "v" }, "<leader>cc", toggle.camel_case, "Toggle Camel Case")
-mapper({ "n", "v" }, "<leader>pc", toggle.pascal_case, "Toggle Pascal Case")
+mapper({ "n" }, "<leader>skc", toggle.snake_case, "Toggle Snake Case")
+mapper({ "n" }, "<leader>cmc", toggle.camel_case, "Toggle Camel Case")
+mapper({ "n" }, "<leader>pcc", toggle.pascal_case, "Toggle Pascal Case")
 
 -- terminal
 local terminal = require("nvterm.terminal")
