@@ -1,4 +1,3 @@
--- for some reason, blaming a line was not working OOTB
 local M = {
   "lewis6991/gitsigns.nvim",
   event = "LazyFile",
