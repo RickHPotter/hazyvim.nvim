@@ -18,11 +18,12 @@ local M = {
               return {
                 exe = "rubocop",
                 args = {
-                  "--fix-layout",
-                  "--autocorrect-all",
-                  current_buffer,
-                  "--format",
-                  "files",
+                  "-a",
+                  -- "--fix-layout",
+                  -- "--autocorrect-all",
+                  -- current_buffer,
+                  -- "--format",
+                  -- "files",
                 },
                 stdin = false,
               }

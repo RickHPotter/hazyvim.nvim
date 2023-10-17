@@ -1,4 +1,4 @@
-return {
+local M = {
   "nvimtools/none-ls.nvim",
   optional = true,
   opts = function(_, opts)
@@ -21,3 +21,5 @@ return {
     end
   end,
 }
+
+return M

@@ -61,6 +61,9 @@ vim.keymap.set("i", "<C-x>", function()
   return vim.fn["codeium#Clear"]()
 end, { expr = true, desc = "Clear Codeium completions" })
 
+-- aerial
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+
 -- toggle
 local toggle = require("config.toggle_case")
 
