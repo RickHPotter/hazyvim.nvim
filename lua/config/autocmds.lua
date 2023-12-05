@@ -5,22 +5,8 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
--- augroup("write_pre", { clear = true })
--- autocmd("BufWritePre", {
---   pattern = "*.ex,*.exs",
---   callback = function()
---     local cursor_pos = vim.fn.getpos(".")
---     local path = vim.fn.expand("%")
---     local str = "terminal mix format " .. path
---     vim.cmd(str)
---     vim.fn.setpos(".", cursor_pos)
---   end,
---   group = "write_pre",
---   desc = "Format Elixir",
--- })
-
 autocmd("BufWritePost", {
   group = augroup("_formatter", { clear = true }),
-  pattern = "*",
+  pattern = "*[^.rb]",
   command = "FormatWrite",
 })

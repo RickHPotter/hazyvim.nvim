@@ -67,9 +67,9 @@ vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 -- toggle
 local toggle = require("config.toggle_case")
 
-mapper({ "n" }, "<leader>skc", toggle.snake_case, "Toggle Snake Case")
-mapper({ "n" }, "<leader>cmc", toggle.camel_case, "Toggle Camel Case")
-mapper({ "n" }, "<leader>pcc", toggle.pascal_case, "Toggle Pascal Case")
+mapper({ "n" }, "<leader>psc", toggle.snake_case, "Toggle Snake Case")
+mapper({ "n" }, "<leader>pcc", toggle.camel_case, "Toggle Camel Case")
+mapper({ "n" }, "<leader>ppc", toggle.pascal_case, "Toggle Pascal Case")
 
 -- terminal
 local terminal = require("nvterm.terminal")

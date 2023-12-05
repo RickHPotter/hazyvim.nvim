@@ -9,8 +9,9 @@ local M = {
       filetype = {
         ruby = {
           function()
-            local current_buffer = vim.fn.expand("%:p")
-            if ruby_version:find("^2%.[0123]") then
+            -- local current_buffer = vim.fn.expand("%:p")
+
+            if 0 == 1 and ruby_version:find("^2%.[0123]") then
               vim.notify("Ruby too old for this shit.")
               vim.notify("Ruby version: " .. ruby_version)
               return {}
