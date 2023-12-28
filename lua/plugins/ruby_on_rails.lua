@@ -9,7 +9,6 @@ return {
         desc = "Extract Variable",
         mode = { "v" },
       },
-      -- FIXME: neither one below works
       {
         "<leader>mf",
         "<cmd>lua require('ruby-toolkit').extract_to_function()<CR>",
