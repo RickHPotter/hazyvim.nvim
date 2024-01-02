@@ -1,8 +1,8 @@
 <!--toc:start-->
 - [💤 LazyVim](#💤-lazyvim)
 - [Installation](#installation)
-  - [Installing Nvim 0.9](#installing-nvim-091)
-  - [Installing HazyVim](#installing-HazyVim)
+  - [Installing NVIM 0.9.1](#installing-nvim-091)
+  - [Installing HazyVim](#installing-hazyvim)
   - [Cloning repo into config folder](#cloning-repo-into-config-folder)
   - [Codeium](#codeium)
   - [TODO](#todo)
@@ -102,7 +102,8 @@ sudo apt-get install lldb
 - As for Ruby, again, install RVM, and the gems.
 
 ```bash
-gpg --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+gpg --keyserver keyserver.ubuntu.com --recv-keys
+409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | sudo bash
 # exit all terminals and then open another one
 rvm list
