@@ -7,11 +7,13 @@ local M = {
   { "olimorris/onedarkpro.nvim", priority = 1000 },
   { "rebelot/kanagawa.nvim", priority = 1000 },
   { "rose-pine/neovim", name = "rose-pine" },
+  { "xiyaowong/transparent.nvim" },
+  { "rcarriga/nvim-notify", opts = { background_colour = "#000000" } },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "carbonfox",
+      colorscheme = "onedark_dark",
     },
   },
 }
