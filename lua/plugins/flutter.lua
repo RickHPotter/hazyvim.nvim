@@ -1,4 +1,4 @@
-return {
+local M = {
   {
     "akinsho/flutter-tools.nvim",
     event = "VeryLazy",
@@ -11,3 +11,5 @@ return {
     end,
   },
 }
+
+return {}

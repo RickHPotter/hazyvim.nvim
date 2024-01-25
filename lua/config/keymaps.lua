@@ -86,7 +86,6 @@ mapper(modes, "<A-i>", function()
 end, "Toggle Floating Terminal")
 
 -- refactoring
-
 mapper("x", "<leader>re", function()
   require("refactoring").refactor("Extract Function")
 end, "Extract Function")
@@ -109,3 +108,9 @@ end, "Inline Function")
 mapper({ "n", "x" }, "<leader>ri", function()
   require("refactoring").refactor("Inline Variable")
 end, "Inline Variable")
+
+-- tmux
+mapper({ "n", "t" }, "<C-h>", vim.cmd.TmuxNavigateLeft, "Tmux Navigate Left")
+mapper({ "n", "t" }, "<C-j>", vim.cmd.TmuxNavigateDown, "Tmux Navigate Down")
+mapper({ "n", "t" }, "<C-k>", vim.cmd.TmuxNavigateUp, "Tmux Navigate Up")
+mapper({ "n", "t" }, "<C-l>", vim.cmd.TmuxNavigateRight, "Tmux Navigate Right")
