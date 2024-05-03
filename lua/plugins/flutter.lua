@@ -1,7 +1,7 @@
 local M = {
   {
     "akinsho/flutter-tools.nvim",
-    event = "VeryLazy",
+    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
@@ -12,4 +12,4 @@ local M = {
   },
 }
 
-return {}
+return M

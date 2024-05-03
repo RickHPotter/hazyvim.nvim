@@ -1,4 +1,5 @@
 require("config.lazy")
+require("lspconfig").emmet_language_server.setup({})
 
 vim.opt.relativenumber = true
 vim.g.dap_virtual_text = true

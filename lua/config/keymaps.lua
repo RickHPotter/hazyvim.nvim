@@ -71,20 +71,6 @@ mapper({ "n" }, "<leader>psc", toggle.snake_case, "Toggle Snake Case")
 mapper({ "n" }, "<leader>pcc", toggle.camel_case, "Toggle Camel Case")
 mapper({ "n" }, "<leader>ppc", toggle.pascal_case, "Toggle Pascal Case")
 
--- terminal
-local terminal = require("nvterm.terminal")
-local modes = { "n", "t" }
-
-mapper(modes, "<A-h>", function()
-  terminal.toggle("horizontal")
-end, "Toggle Horizontal Terminal")
-mapper(modes, "<A-v>", function()
-  terminal.toggle("vertical")
-end, "Toggle Vertical Terminal")
-mapper(modes, "<A-i>", function()
-  terminal.toggle("float")
-end, "Toggle Floating Terminal")
-
 -- refactoring
 mapper("x", "<leader>re", function()
   require("refactoring").refactor("Extract Function")
