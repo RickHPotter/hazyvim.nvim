@@ -17,3 +17,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
   nested = true,
 })
+
+-- Disable auto formatting on save for some filetypes
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "markdown", "yaml" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
