@@ -3,4 +3,3 @@
 -- Add any additional options here
 
 vim.api.nvim_set_hl(0, "Comment", { italic = true })
-vim.lsp.inlay_hint.enable(false, nil)

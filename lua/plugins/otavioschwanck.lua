@@ -59,11 +59,6 @@ local M = {
         "<cmd>lua require('ruby-toolkit').create_function_from_text()<CR>",
         desc = "Create Function from item on cursor",
       },
-    },
-  },
-  {
-    "vim-ruby/vim-ruby",
-    keys = {
       { "XIF", "<Esc>Iif <Esc>oend<Esc>O", desc = "Turn line into if block and get in", mode = "i" },
       { "XIE", "<Esc>Iif <Esc>oend<Esc>Oelse<Esc>O", desc = "Turn line into if block and get in", mode = "i" },
       { "XES", "<Esc>oelse<Esc>o", desc = "Write else block and get in", mode = "i" },
