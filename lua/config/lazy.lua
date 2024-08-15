@@ -9,7 +9,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- { import = "lazyvim.plugins.extras.lang.ruby" },
+    { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.elixir" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
@@ -26,6 +26,20 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.luasnip" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "plugins" },
+    {
+      -- HACK: IDK what happend, but diagnosics is flooding my erb files
+      {
+        "neovim/nvim-lspconfig",
+        opts = {
+          on_attach = function(client)
+            local filetype = vim.bo.filetype
+            if filetype == ".erb" then
+              client.server_capabilities.document_diagnostics = false
+            end
+          end,
+        },
+      },
+    },
   },
   defaults = {
     lazy = false,
