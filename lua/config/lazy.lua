@@ -25,21 +25,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "plugins" },
-    {
-      -- HACK: IDK what happend, but diagnosics is flooding my erb files
-      {
-        "neovim/nvim-lspconfig",
-        opts = {
-          on_attach = function(client)
-            local filetype = vim.bo.filetype
-            if filetype == ".erb" then
-              client.server_capabilities.document_diagnostics = false
-            end
-          end,
-        },
-      },
-    },
   },
   defaults = {
     lazy = false,
