@@ -13,7 +13,7 @@ local M = {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      colorscheme = "catppuccin-latte",
     },
   },
 }
