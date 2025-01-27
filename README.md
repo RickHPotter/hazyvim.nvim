@@ -5,7 +5,6 @@
   - [Installing HazyVim](#installing-hazyvim)
   - [Cloning repo into config folder](#cloning-repo-into-config-folder)
   - [Codeium](#codeium)
-  - [TODO](#todo)
 <!--toc:end-->
 
 # 💤 LazyVim
@@ -140,8 +139,3 @@ It's much like Copilot, but free and way better than it should.
 All you have to do is to sign up, and then grab the key.
 Run the command :Codeium Auth, click on the link after signing up and paste the key.
 It's all good then.
-
-## TODO
-
-Maybe just a breaking change, but changing colourscheme with `<leader>uC` is
-throwing an error.

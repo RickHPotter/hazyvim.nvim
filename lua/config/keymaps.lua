@@ -44,23 +44,6 @@ mapper("n", "N", "Nzz", "Previous search result middle")
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
 mapper("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', "Pasting without copying replaced text")
 
--- codeium
-vim.keymap.set("i", "<C-c>", function()
-  return vim.fn["codeium#Accept"]()
-end, { expr = true, desc = "Accept completion" })
-
-vim.keymap.set("i", "<C-a>", function()
-  return vim.fn["codeium#CycleCompletions"](-1)
-end, { expr = true, desc = "Previous Codeium completion" })
-
-vim.keymap.set("i", "<C-d>", function()
-  return vim.fn["codeium#CycleCompletions"](1)
-end, { expr = true, desc = "Next Codeium completion" })
-
-vim.keymap.set("i", "<C-x>", function()
-  return vim.fn["codeium#Clear"]()
-end, { expr = true, desc = "Clear Codeium completions" })
-
 -- aerial
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
