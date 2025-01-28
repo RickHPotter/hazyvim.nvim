@@ -42,4 +42,28 @@ function M.pascal_case()
   end
 end
 
+-- Function to transform a string to a symbol
+function M.transform_string_to_symbol()
+  local cursor_pos = vim.api.nvim_win_get_cursor(0)
+  local _, col = cursor_pos[1], cursor_pos[2] + 1 -- Convert to 1-based column index
+  local line = vim.api.nvim_get_current_line()
+
+  local pattern = "()([\"'])([^\"']+)%2()"
+
+  local matches = {}
+  for match_left, _, content, match_right in line:gmatch(pattern) do
+    table.insert(matches, { left = tonumber(match_left), right = tonumber(match_right), content = content })
+  end
+
+  for _, match in ipairs(matches) do
+    if col >= match.left and col <= match.right then
+      local transformed_line = line:sub(1, match.left - 1) .. ":" .. match.content .. line:sub(match.right)
+      vim.api.nvim_set_current_line(transformed_line)
+      return
+    end
+  end
+
+  vim.notify("No string found under the cursor!", vim.log.levels.WARN)
+end
+
 return M
