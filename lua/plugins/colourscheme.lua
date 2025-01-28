@@ -9,11 +9,22 @@ local M = {
   { "catppuccin/nvim", name = "catppuccin", lazy = false },
   { "yorik1984/newpaper.nvim" },
   { "xiyaowong/transparent.nvim" },
-
+  { "scottmckendry/cyberdream.nvim", lazy = false, priority = 1000 },
+  {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.everforest_enable_italic = true
+      vim.o.background = "light"
+    end,
+  },
+  { "sonph/onehalf" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-latte",
+      colorscheme = "everforest",
+      -- colorscheme = "catppuccin-latte",
     },
   },
 }
