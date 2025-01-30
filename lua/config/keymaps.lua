@@ -84,3 +84,16 @@ mapper({ "n", "t" }, "<C-h>", vim.cmd.TmuxNavigateLeft, "Tmux Navigate Left")
 mapper({ "n", "t" }, "<C-j>", vim.cmd.TmuxNavigateDown, "Tmux Navigate Down")
 mapper({ "n", "t" }, "<C-k>", vim.cmd.TmuxNavigateUp, "Tmux Navigate Up")
 mapper({ "n", "t" }, "<C-l>", vim.cmd.TmuxNavigateRight, "Tmux Navigate Right")
+
+-- suck it, Picker
+mapper("n", "<leader>gf", function()
+  Snacks.lazygit.log_file()
+end, "Lazygit Current File History")
+
+mapper("n", "<leader>gb", function()
+  Snacks.git.blame_line()
+end, "Git Blame Line")
+
+mapper("n", "<leader>gB", function()
+  Snacks.picker.git_log_line()
+end, "Picker Blame Line")
